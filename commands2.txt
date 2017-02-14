@@ -1,0 +1,22 @@
+#These are some of the commands I managed to try- haven't written in record though.
+
+#1. Write a command to display all file types in home/6a directory
+ls | xargs file -b | sort | uniq
+
+#2.Add two files to an archive using tar and compress the archive. Reverse process and extract files in their original form
+tar -czvf myArch.tar.gz /home/6a/Anisha/O*/commands.txt /home/6a/Anisha/O*/commands2.txt
+
+tar -xzvf myArch.tar.gz 
+
+#3. Implement the cmp comm and diff with 2 files
+cmp commands.txt commands2.txt
+
+comm test.txt test2.txt
+
+diff test.txt test2.txt
+
+#4.Display all files in last accessed time
+ls -ltu
+
+#6.Display all files in directory based on last accessed time
+ls -ltu
