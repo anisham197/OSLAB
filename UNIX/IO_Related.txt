@@ -1,0 +1,29 @@
+1)Display the username and filesize from the current directory
+
+2)Display only the 5 largest files in your current directory
+ls -S | head -5
+
+3)Display inode number of files in ypur current path
+ls -i
+
+4)Copy username, filename and command name into a file called new.txt
+
+
+5)Sort all files in your current path in namewise ascending order
+ls -1| sort
+
+6)Convert the content of file emp.txt into uppercase
+tr '[:lower:]' '[:upper:]' < emp.txt
+
+7)Display all userid and groupid of programs
+find . -type f -executable
+
+8)Translate the space characters from emp.txt by * symbol
+tr ' ' '*' < emp.txt
+
+9)Display only the process id, parent process id of process running on system
+ps xao pid,ppid | head
+
+10)Display the files which are having execute permisison only on the current path
+find . -type f -executable
+
