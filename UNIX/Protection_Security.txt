@@ -15,8 +15,5 @@ comm test.txt test2.txt
 
 diff test.txt test2.txt
 
-#4.Display all files in last accessed time
-ls -ltu
-
-#6.Display all files in directory based on last accessed time
+#4.Display all files in directory based on last accessed time
 ls -ltu
