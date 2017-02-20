@@ -1,0 +1,22 @@
+#1.Display all processes running on system
+ps aux
+
+#2.Display all user processes
+ps u
+
+#3.Display parent process of process running on your system
+ps f
+
+#4.Dislay current working shell on your system
+ps -p $$
+
+#5.Display all system process
+ps aux
+
+#6.Display all details of process running by user '5b'
+ps -f -u 5b
+
+#7.Kill the particular process and check the status of process
+kill $(pidof chrome)
+ps -e | grep chrome
+
