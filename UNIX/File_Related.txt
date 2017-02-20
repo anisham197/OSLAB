@@ -88,6 +88,4 @@ rm -r ./College/Engg/temp1
 #25 Display Recursively, files from College
 ls -R ./College
 
-#26 Simulate Protection and Security Commands
-
 
