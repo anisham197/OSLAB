@@ -52,53 +52,51 @@ int main()
         }
     }
 
-    cout<<"max matrix\n";
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < r; j++){
-            cout << q[i].max[j] << "\t";
-        }
-        cout << endl;
-    }
-
-    cout<<"allocation matrix\n";
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < r; j++){
-            cout << q[i].alloc[j] << "\t";
-        }
-        cout << endl;
-    }
-
-
-        cout<<"need matrix\n";
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < r; j++){
-                cout << q[i].need[j] << "\t";
-            }
-            cout << endl;
-        }
-
-        cout<<"total vector\n";
-        for(int i = 0; i < r; i++){
-                cout << total[i] << "\t";
-        }
-            cout << endl;
-
-        cout<<"avail vector\n";
-        for(int i = 0; i < r; i++){
-                cout << avail[i] << "\t";
-        }
-            cout << endl;
-
+    // cout<<"max matrix\n";
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < r; j++){
+    //         cout << q[i].max[j] << "\t";
+    //     }
+    //     cout << endl;
+    // }
+    //
+    // cout<<"allocation matrix\n";
+    // for(int i = 0; i < n; i++){
+    //     for(int j = 0; j < r; j++){
+    //         cout << q[i].alloc[j] << "\t";
+    //     }
+    //     cout << endl;
+    // }
+    //
+    //
+    //     cout<<"need matrix\n";
+    //     for(int i = 0; i < n; i++){
+    //         for(int j = 0; j < r; j++){
+    //             cout << q[i].need[j] << "\t";
+    //         }
+    //         cout << endl;
+    //     }
+    //
+    //     cout<<"total vector\n";
+    //     for(int i = 0; i < r; i++){
+    //             cout << total[i] << "\t";
+    //     }
+    //         cout << endl;
+    //
+    //     cout<<"avail vector\n";
+    //     for(int i = 0; i < r; i++){
+    //             cout << avail[i] << "\t";
+    //     }
+    //         cout << endl;
 
     int i = 0, count;
     bool flag = false;
-    string sequence = "";
     while( i < n )
     {
             int select = -1;
             for(int process = 0; process < n; process++){
                 count = 0;
-                if(!q[process].isProcessed){                    
+                if(!q[process].isProcessed){
                     for(int res = 0; res < r; res++){
                         if( q[process].need[res] <= avail[res]){
                             count++;
@@ -117,9 +115,6 @@ int main()
             if(flag){
                     flag = false;
                     q[select].isProcessed = 1;
-                    // string p_name = "P" + select;
-                    // sequence.append(p_name);
-                    // sequence.append(", ");
                     cout << "P" << select << ", ";
 
                     for(int j = 0;j < r; j++){
@@ -132,5 +127,5 @@ int main()
                     return 0;
             }
     }
-    cout<<"\nsafe sequence is: "<<sequence<<endl;
+    cout<<" is the safe sequence"<<endl;
 }
