@@ -52,43 +52,6 @@ int main()
         }
     }
 
-    // cout<<"max matrix\n";
-    // for(int i = 0; i < n; i++){
-    //     for(int j = 0; j < r; j++){
-    //         cout << q[i].max[j] << "\t";
-    //     }
-    //     cout << endl;
-    // }
-    //
-    // cout<<"allocation matrix\n";
-    // for(int i = 0; i < n; i++){
-    //     for(int j = 0; j < r; j++){
-    //         cout << q[i].alloc[j] << "\t";
-    //     }
-    //     cout << endl;
-    // }
-    //
-    //
-    //     cout<<"need matrix\n";
-    //     for(int i = 0; i < n; i++){
-    //         for(int j = 0; j < r; j++){
-    //             cout << q[i].need[j] << "\t";
-    //         }
-    //         cout << endl;
-    //     }
-    //
-    //     cout<<"total vector\n";
-    //     for(int i = 0; i < r; i++){
-    //             cout << total[i] << "\t";
-    //     }
-    //         cout << endl;
-    //
-    //     cout<<"avail vector\n";
-    //     for(int i = 0; i < r; i++){
-    //             cout << avail[i] << "\t";
-    //     }
-    //         cout << endl;
-
     int i = 0, count;
     bool flag = false;
     while( i < n )
