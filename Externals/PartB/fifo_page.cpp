@@ -1,7 +1,8 @@
 #include<iostream>
 using namespace std;
 
-int main (){
+int main ()
+{
     int n, r, pageFaults = 0, index = 0;
 
     cout << "Enter the number of page frames\n";
