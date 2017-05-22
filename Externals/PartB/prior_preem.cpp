@@ -5,7 +5,7 @@
 using namespace std;
 
 struct process{
-	int no, arrival, burst, remaining, finish, waiting, turnaround;
+	int no, arrival, burst, priority, remaining, finish, waiting, turnaround;
 };
 
 process *q;
@@ -34,20 +34,20 @@ void printGantt()
         cout <<"\tP"<< gantt[i].pno+1;
     cout<<endl;
     for(int i=0;i<g_count;i++)
-        cout<<"\t@"<<gantt[i].time;
+        cout<<"\t@"<< gantt[i].time;
     cout<<endl;
 }
 
 void display()
 {
 	int avgw = 0,avgt = 0;
-	cout<<"\nProcess\tArrival\tBurst\tFinish\tWaiting\tTurnaround\n";
+	cout<<"\nProcess\tArrival\tBurst\tPrty\tFinish\tWaiting\tTurnaround\n";
 	for(int i = 0;i < n; i++)
 	{
       q[i].waiting = q[i].finish - q[i].arrival - q[i].burst;
       q[i].turnaround = q[i].finish - q[i].arrival;
 
-      cout<<"P"<<q[i].no+1<<"\t"<<q[i].arrival<<"\t"<<q[i].burst;
+      cout<<"P"<<q[i].no+1<<"\t"<<q[i].arrival<<"\t"<<q[i].burst<<"\t"<<q[i].priority;
       cout<<"\t"<<q[i].finish<<"\t"<<q[i].waiting<<"\t"<<q[i].turnaround << endl;
 
       avgt += q[i].turnaround;
@@ -57,14 +57,14 @@ void display()
 	cout<<"Average turnaround time: "<<avgt/(float)n<<endl;
 }
 
-process* getShortestJob (int current)
+process* getMinPriority (int current)
 {
-    int min_burst = MAX, index = -1;
-    for(int i = 0;i < n; i++)
+    int min_prior = MAX, index = -1;
+    for(int i = 0; i < n; i++)
     {
-        if(q[i].remaining < min_burst && q[i].arrival <= current && q[i].remaining > 0)
+        if(q[i].priority < min_prior && q[i].arrival <= current && q[i].remaining > 0)
         {
-            min_burst = q[i].remaining;
+            min_prior = q[i].priority;
             index = i;
         }
     }
@@ -86,11 +86,11 @@ int main()
   cout << "Enter number of processes:\n";
 	cin >> n;
 	q = new process[n];
-	cout << "Enter arrival and burst times of each process:\n";
+	cout << "Enter arrival and burst times and priority of each process:\n";
 	for(int i = 0;i < n; i++)
 	{
   		q[i].no = i;
-  		cin >> q[i].arrival >> q[i].burst;
+  		cin >> q[i].arrival >> q[i].burst >> q[i].priority;
       q[i].remaining = q[i].burst;
 	}
 	//sort based on arrival
@@ -100,7 +100,7 @@ int main()
   process *p = NULL;
   while( isRemaining() )
   {
-      p = getShortestJob( current );
+      p = getMinPriority( current );
       if( p != NULL)
       {
           p->remaining--;   // non preem: decrement by burst
