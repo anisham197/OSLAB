@@ -1,5 +1,4 @@
 #include <iostream>
-#include <string>
 using namespace std;
 
 struct process
@@ -73,7 +72,7 @@ int main()
                 break;
             }
         }
-        
+
         if(flag){
                 flag = false;
                 q[select].isProcessed = 1;
